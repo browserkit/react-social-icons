@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
-import Background from './background';
 import Icon from './icon';
-import Mask from './mask';
 import { keyFor } from './networks';
 import { socialIcon, socialContainer, socialSvg } from './styles';
 
@@ -21,10 +19,8 @@ function SocialIcon(props) {
        className={cx('social-icon', className)}
        style={{ ...socialIcon, ...props.style }}>
       <div className="social-container" style={socialContainer} >
-        <svg className="social-svg" style={socialSvg} viewBox="0 0 64 64">
-          <Background />
+        <svg className="social-svg" style={{fill:color, ...socialSvg}} viewBox="0 0 64 64">
           <Icon networkKey={networkKey} />
-          <Mask networkKey={networkKey} color={color} />
         </svg>
       </div>
     </a>
